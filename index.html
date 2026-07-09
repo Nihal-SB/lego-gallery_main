@@ -25,7 +25,7 @@
 
   <div class="gallery">
 
-    <div class="card" data-category="lego">
+    <div class="card" data-category="lego" data-images='["im02sp.jpeg","im03sp.jpeg","im04sp.jpeg"]'>
       <img src="images/im09.jpeg" alt="LEGO spaceship build">
       <div class="card-info">
         <h3>Spaceship</h3>
@@ -34,7 +34,7 @@
       </div>
     </div>
 
-    <div class="card" data-category="lego">
+    <div class="card" data-category="lego" data-images='["im02pa.jpeg"]'>
       <img src="images/im04.png.jpeg" alt="LEGO Parrot build">
       <div class="card-info">
         <h3>Parrot</h3>
@@ -43,7 +43,7 @@
       </div>
    </div> 
 
-    <div class="card" data-category="lego">
+    <div class="card" data-category="lego" data-images='["im02mc.jpeg","im03mc.jpeg"]'>
       <img src="images/im10.jpeg" alt="Lego McLaren F1">
       <div class="card-info">
         <h3>McLaren F1</h3>
@@ -71,7 +71,7 @@
    </div> 
 
    <div class="card" data-category="lego">
-      <img src="images/im06.jpeg" alt="LEGO Koenigsegg Jesko">
+      <img src="images/im06.jpeg" alt="LEGO Koenigsegg Jesko" data-images='["im02ko.jpeg","im03ko.jpeg","im04ko.jpeg","im05ko.jpeg","im06ko.jpeg"]'>
       <div class="card-info">
         <h3>Koenigsegg Jesko</h3>
         <p class="price">$60</p>
@@ -79,7 +79,7 @@
       </div>
    </div> 
 
-   <div class="card" data-category="lego">
+   <div class="card" data-category="lego" data-images='["im02bug.jpeg","im03bug.jpeg","im04bug.jpeg","im05bug.jpeg"]'>
       <img src="images/im07.jpeg" alt="LEGO Bugatti Bolide">
       <div class="card-info">
         <h3>Lego Bugatti Bolide</h3>
@@ -88,7 +88,7 @@
       </div>
    </div> 
 
-   <div class="card" data-category="lego">
+   <div class="card" data-category="lego" data-images='["im02lamb.jpeg","im03lamb.jpeg","im04.jpeg"]'>
       <img src="images/im04.jpeg" alt="LEGO Lamborghini Huracan">
       <div class="card-info">
         <h3>Lego Lamborghini Huracan</h3>
@@ -104,27 +104,112 @@
     <p>Made by Nihal</p>
   </footer>
 
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-overlay" id="lightboxOverlay"></div>
+  <div class="lightbox-content">
+    <button class="lightbox-close" id="lightboxClose">✕</button>
+    <div class="lightbox-main">
+      <button class="lightbox-arrow" id="prevBtn">&#8249;</button>
+      <img src="" alt="" id="lightboxImg">
+      <button class="lightbox-arrow" id="nextBtn">&#8250;</button>
+    </div>
+    <div class="lightbox-thumbs" id="lightboxThumbs"></div>
+  </div>
+</div>
+
 <script>
-    const tabs = document.querySelectorAll('.tab-btn');
-    const cards = document.querySelectorAll('.card');
+  // --- Tab filtering ---
+  const tabs = document.querySelectorAll('.tab-btn');
+  const cards = document.querySelectorAll('.card');
 
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-
-        const filter = tab.getAttribute('data-filter');
-
-        cards.forEach(card => {
-          if (filter === 'all' || card.getAttribute('data-category') === filter) {
-            card.style.display = 'block';
-          } else {
-            card.style.display = 'none';
-          }
-        });
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const filter = tab.getAttribute('data-filter');
+      cards.forEach(card => {
+        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
       });
     });
-  </script>
+  });
+
+  // --- Lightbox ---
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxThumbs = document.getElementById('lightboxThumbs');
+  const lightboxClose = document.getElementById('lightboxClose');
+  const lightboxOverlay = document.getElementById('lightboxOverlay');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  let currentImages = [];
+  let currentIndex = 0;
+
+  function openLightbox(images, startIndex) {
+    currentImages = images;
+    currentIndex = startIndex;
+    updateLightbox();
+    lightbox.classList.add('active');
+  }
+
+  function updateLightbox() {
+    lightboxImg.src = currentImages[currentIndex];
+
+    lightboxThumbs.innerHTML = '';
+    currentImages.forEach((src, i) => {
+      const thumb = document.createElement('img');
+      thumb.src = src;
+      thumb.classList.add('thumb');
+      if (i === currentIndex) thumb.classList.add('active-thumb');
+      thumb.addEventListener('click', () => {
+        currentIndex = i;
+        updateLightbox();
+      });
+      lightboxThumbs.appendChild(thumb);
+    });
+
+    prevBtn.style.display = currentImages.length > 1 ? 'flex' : 'none';
+    nextBtn.style.display = currentImages.length > 1 ? 'flex' : 'none';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+  }
+
+  // Open on card image click
+  document.querySelectorAll('.card-main-img').forEach(img => {
+    img.addEventListener('click', () => {
+      const card = img.closest('.card');
+      const images = JSON.parse(card.getAttribute('data-images'));
+      openLightbox(images, 0);
+    });
+  });
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+    updateLightbox();
+  });
+
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % currentImages.length;
+    updateLightbox();
+  });
+
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightboxOverlay.addEventListener('click', closeLightbox);
+
+  // Close with Escape key
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') { currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length; updateLightbox(); }
+    if (e.key === 'ArrowRight') { currentIndex = (currentIndex + 1) % currentImages.length; updateLightbox(); }
+  });
+</script>
 
 </body>
 </html>

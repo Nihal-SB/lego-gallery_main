@@ -361,3 +361,228 @@ footer {
   border-color: #d4af37;
   opacity: 1;
 }
+
+/* ── Hero ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  background: radial-gradient(ellipse at top, #1a1a2e 0%, #0e0e10 70%);
+  position: relative;
+}
+
+.hero-tag {
+  font-size: 0.85rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #d4af37;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.hero-sub {
+  font-size: 1.1rem;
+  color: #aaa;
+  max-width: 560px;
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+.hero-btn {
+  display: inline-block;
+  background-color: #d4af37;
+  color: #0e0e10;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 14px 36px;
+  border-radius: 30px;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.hero-btn:hover {
+  background-color: #f0c14b;
+  transform: translateY(-2px);
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 30px;
+  font-size: 1.4rem;
+  color: #555;
+  animation: bounce 1.8s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+/* ── About ── */
+.about {
+  background-color: #111113;
+  padding: 80px 20px;
+  text-align: center;
+  border-top: 1px solid #2a2a2e;
+  border-bottom: 1px solid #2a2a2e;
+}
+
+.about-inner {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.about h2 {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.about p {
+  color: #aaa;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+.about-stats {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-num {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #d4af37;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: #777;
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ── Deals ── */
+.deals {
+  background-color: #0e0e10;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.deals-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.deals h2 {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.deals-sub {
+  color: #777;
+  margin-bottom: 40px;
+  font-size: 0.95rem;
+}
+
+.deals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.deal-card {
+  background: #1a1a1d;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #2a2a2e;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.deal-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.deal-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #d4af37;
+  color: #0e0e10;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 20px;
+  z-index: 1;
+}
+
+.deal-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.deal-info {
+  padding: 16px;
+  text-align: center;
+}
+
+.deal-info h3 {
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.deal-old {
+  color: #555;
+  text-decoration: line-through;
+  font-size: 0.9rem;
+}
+
+.deal-new {
+  color: #d4af37;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 14px;
+}
+
+.deal-btn {
+  display: inline-block;
+  background: #d4af37;
+  color: #0e0e10;
+  padding: 9px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.deal-btn:hover {
+  background: #f0c14b;
+}

@@ -7,93 +7,104 @@
 </head>
 <body>
 
-  <header>
-    <!-- Hero Section -->
-<section class="hero">
-  <div class="hero-content">
-    <p class="hero-tag">Handcrafted Builds · Phoenix, Arizona</p>
-    <h1>Buy Your Build</h1>
-    <p class="hero-sub">One-of-a-kind LEGO builds, paper creations, micro blocks, and spare parts — made by hand, built with passion.</p>
-    <a href="#gallery" class="hero-btn">Shop Now</a>
-  </div>
-  <div class="hero-scroll">↓</div>
-</section>
+  <!-- Hamburger Button -->
+  <button class="hamburger" id="hamburger">&#9776;</button>
 
-<!-- About Section -->
-<section class="about">
-  <div class="about-inner">
-    <h2>What Is Buy Your Build?</h2>
-    <p>We are a small, passion-driven shop based in Phoenix, Arizona. Every item you see here was carefully built by hand — from intricate LEGO supercars to detailed micro block landmarks. Browse the collection, find something you love, and reach out to make it yours.</p>
-    <div class="about-stats">
-      <div class="stat">
-        <span class="stat-num">8+</span>
-        <span class="stat-label">Unique Builds</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num">4</span>
-        <span class="stat-label">Categories</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num">100%</span>
-        <span class="stat-label">Handmade</span>
+  <!-- Side Menu -->
+  <div class="side-menu" id="sideMenu">
+    <button class="side-menu-close" id="sideMenuClose">✕</button>
+    <h3>Shop By Category</h3>
+    <button class="side-btn" data-filter="all">All Builds</button>
+    <button class="side-btn" data-filter="lego">Lego</button>
+    <button class="side-btn" data-filter="paper">Paper</button>
+    <button class="side-btn" data-filter="micro">Micro Blocks</button>
+    <button class="side-btn" data-filter="spare">Spare Parts</button>
+  </div>
+
+  <!-- Side Menu Overlay -->
+  <div class="side-overlay" id="sideOverlay"></div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="hero-tag">Handcrafted Builds · Phoenix, Arizona</p>
+      <h1>Buy Your Build</h1>
+      <p class="hero-sub">One-of-a-kind LEGO builds, paper creations, micro blocks, and spare parts — made by hand, built with passion.</p>
+      <a href="#deals" class="hero-btn">See Current Deals</a>
+    </div>
+    <div class="hero-scroll">↓</div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about">
+    <div class="about-inner">
+      <h2>What Is Buy Your Build?</h2>
+      <p>We are a small, passion-driven shop based in Phoenix, Arizona. Every item you see here was carefully built by hand — from intricate LEGO supercars to detailed micro block landmarks. Browse the collection, find something you love, and reach out to make it yours.</p>
+      <div class="about-stats">
+        <div class="stat">
+          <span class="stat-num">8+</span>
+          <span class="stat-label">Unique Builds</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">4</span>
+          <span class="stat-label">Categories</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Handmade</span>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Deals Section -->
-<section class="deals">
-  <div class="deals-inner">
-    <h2>🔥 Current Deals</h2>
-    <p class="deals-sub">Limited time offers — contact us before they're gone</p>
-    <div class="deals-grid">
+  <!-- Deals Section -->
+  <section class="deals" id="deals">
+    <div class="deals-inner">
+      <h2>🔥 Current Deals</h2>
+      <p class="deals-sub">Limited time offers — contact us before they're gone</p>
+      <div class="deals-grid">
 
-      <div class="deal-card">
-        <span class="deal-badge">20% OFF</span>
-        <img src="images/im09.jpeg" alt="Spaceship">
-        <div class="deal-info">
-          <h3>Spaceship</h3>
-          <p class="deal-old">$45</p>
-          <p class="deal-new">$36</p>
-          <a href="https://mail.google.com/mail/?view=cm&to=nihalgift@gmail.com&su=Deal%20Inquiry%20-%20Spaceship&body=Hi!%20I%20saw%20the%20deal%20on%20the%20Spaceship%20and%20am%20interested." target="_blank" class="deal-btn">Claim Deal</a>
+        <div class="deal-card">
+          <span class="deal-badge">20% OFF</span>
+          <img src="images/im09.jpeg" alt="Spaceship">
+          <div class="deal-info">
+            <h3>Spaceship</h3>
+            <p class="deal-old">$45</p>
+            <p class="deal-new">$36</p>
+            <a href="https://mail.google.com/mail/?view=cm&to=nihalgift@gmail.com&su=Deal%20Inquiry%20-%20Spaceship&body=Hi!%20I%20saw%20the%20deal%20on%20the%20Spaceship%20and%20am%20interested." target="_blank" class="deal-btn">Claim Deal</a>
+          </div>
         </div>
-      </div>
 
-      <div class="deal-card">
-        <span class="deal-badge">15% OFF</span>
-        <img src="images/im11.jpeg" alt="Empire State Building">
-        <div class="deal-info">
-          <h3>Empire State Building</h3>
-          <p class="deal-old">$60</p>
-          <p class="deal-new">$51</p>
-          <a href="https://mail.google.com/mail/?view=cm&to=nihalgift@gmail.com&su=Deal%20Inquiry%20-%20Empire%20State&body=Hi!%20I%20saw%20the%20deal%20on%20the%20Empire%20State%20Building%20and%20am%20interested." target="_blank" class="deal-btn">Claim Deal</a>
+        <div class="deal-card">
+          <span class="deal-badge">15% OFF</span>
+          <img src="images/im11.jpeg" alt="Empire State Building">
+          <div class="deal-info">
+            <h3>Empire State Building</h3>
+            <p class="deal-old">$60</p>
+            <p class="deal-new">$51</p>
+            <a href="https://mail.google.com/mail/?view=cm&to=nihalgift@gmail.com&su=Deal%20Inquiry%20-%20Empire%20State&body=Hi!%20I%20saw%20the%20deal%20on%20the%20Empire%20State%20Building%20and%20am%20interested." target="_blank" class="deal-btn">Claim Deal</a>
+          </div>
         </div>
-      </div>
 
-      <div class="deal-card">
-        <span class="deal-badge">10% OFF</span>
-        <img src="images/im07.jpeg" alt="Bugatti Bolide">
-        <div class="deal-info">
-          <h3>Bugatti Bolide</h3>
-          <p class="deal-old">$60</p>
-          <p class="deal-new">$54</p>
-          <a href="https://mail.google.com/mail/?view=cm&to=nihalgift@gmail.com&su=Deal%20Inquiry%20-%20Bugatti%20Bolide&body=Hi!%20I%20saw%20the%20deal%20on%20the%20Bugatti%20Bolide%20and%20am%20interested." target="_blank" class="deal-btn">Claim Deal</a>
+        <div class="deal-card">
+          <span class="deal-badge">10% OFF</span>
+          <img src="images/im07.jpeg" alt="Bugatti Bolide">
+          <div class="deal-info">
+            <h3>Bugatti Bolide</h3>
+            <p class="deal-old">$60</p>
+            <p class="deal-new">$54</p>
+            <a href="https://mail.google.com/mail/?view=cm&to=nihalgift@gmail.com&su=Deal%20Inquiry%20-%20Bugatti%20Bolide&body=Hi!%20I%20saw%20the%20deal%20on%20the%20Bugatti%20Bolide%20and%20am%20interested." target="_blank" class="deal-btn">Claim Deal</a>
+          </div>
         </div>
-      </div>
 
+      </div>
     </div>
-  </div>
-</section>
-  </header>
+  </section>
 
-  <main id="gallery">
-
-    <div class="tabs">
-      <button class="tab-btn active" data-filter="all">All</button>
-      <button class="tab-btn" data-filter="lego">Lego</button>
-      <button class="tab-btn" data-filter="paper">Paper</button>
-      <button class="tab-btn" data-filter="micro">Micro Blocks</button>
-      <button class="tab-btn" data-filter="spare">Spare Parts</button>
+  <!-- Gallery (hidden until category selected) -->
+  <main id="gallery" style="display:none;">
+    <div class="gallery-header">
+      <h2 id="galleryTitle">All Builds</h2>
     </div>
 
     <div class="gallery">
@@ -143,7 +154,7 @@
         </div>
       </div>
 
-      <div class="card" data-category="lego" data-images='["images/im06.jpeg","images/im02ko.jpeg","images/im03ko.jpeg","images/im04ko.jpeg","images/im05ko.jpeg","images/im06ko.jpeg"]'>
+      <div class="card" data-category="lego" data-images='["images/im06.jpeg","images/im02ko.jpeg","images/im03ko.jpeg","images/im04ko.jpeg","images/im05ko.jpeg"]'>
         <img src="images/im06.jpeg" alt="LEGO Koenigsegg Jesko" class="card-main-img">
         <div class="card-info">
           <h3>Koenigsegg Jesko</h3>
@@ -155,16 +166,16 @@
       <div class="card" data-category="lego" data-images='["images/im07.jpeg","images/im02bug.jpeg","images/im03bug.jpeg","images/im04bug.jpeg","images/im05bug.jpeg"]'>
         <img src="images/im07.jpeg" alt="LEGO Bugatti Bolide" class="card-main-img">
         <div class="card-info">
-          <h3>Lego Bugatti Bolide</h3>
+          <h3>Bugatti Bolide</h3>
           <p class="price">$60</p>
           <a class="buy-btn buy-btn-alt" href="https://mail.google.com/mail/?view=cm&to=nihalgift@gmail.com&su=Inquiry%20about%20Bugatti%20Bolide&body=Hi!%20I%20am%20interested%20in%20buying%20the%20Bugatti%20Bolide%20build." target="_blank">Buy</a>
         </div>
       </div>
 
-      <div class="card" data-category="lego" data-images='["images/im04.jpeg","images/im02lamb.jpeg","images/im03lamb.jpeg","images/04lamb.jpeg","images/05lamb.jpeg","images/06lamb.jpeg"]'>
+      <div class="card" data-category="lego" data-images='["images/im04.jpeg","images/im02lamb.jpeg","images/im03lamb.jpeg"]'>
         <img src="images/im04.jpeg" alt="LEGO Lamborghini Huracan" class="card-main-img">
         <div class="card-info">
-          <h3>Lego Lamborghini Huracan</h3>
+          <h3>Lamborghini Huracan</h3>
           <p class="price">$60</p>
           <a class="buy-btn buy-btn-alt" href="https://mail.google.com/mail/?view=cm&to=nihalgift@gmail.com&su=Inquiry%20about%20Lamborghini%20Huracan&body=Hi!%20I%20am%20interested%20in%20buying%20the%20Lamborghini%20Huracan%20build." target="_blank">Buy</a>
         </div>
@@ -192,15 +203,52 @@
   </div>
 
   <script>
-    // --- Tab filtering ---
-    const tabs = document.querySelectorAll('.tab-btn');
-    const cards = document.querySelectorAll('.card');
+    // ── Hamburger Menu ──
+    const hamburger = document.getElementById('hamburger');
+    const sideMenu = document.getElementById('sideMenu');
+    const sideOverlay = document.getElementById('sideOverlay');
+    const sideMenuClose = document.getElementById('sideMenuClose');
 
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        const filter = tab.getAttribute('data-filter');
+    hamburger.addEventListener('click', () => {
+      sideMenu.classList.add('open');
+      sideOverlay.classList.add('open');
+    });
+
+    function closeMenu() {
+      sideMenu.classList.remove('open');
+      sideOverlay.classList.remove('open');
+    }
+
+    sideMenuClose.addEventListener('click', closeMenu);
+    sideOverlay.addEventListener('click', closeMenu);
+
+    // ── Category Filtering ──
+    const sideButtons = document.querySelectorAll('.side-btn');
+    const cards = document.querySelectorAll('.card');
+    const gallery = document.getElementById('gallery');
+    const galleryTitle = document.getElementById('galleryTitle');
+
+    const categoryNames = {
+      all: 'All Builds',
+      lego: 'Lego Builds',
+      paper: 'Paper Builds',
+      micro: 'Micro Block Builds',
+      spare: 'Spare Parts'
+    };
+
+    sideButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+
+        // Update active button
+        sideButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // Show gallery
+        gallery.style.display = 'block';
+        galleryTitle.textContent = categoryNames[filter];
+
+        // Filter cards
         cards.forEach(card => {
           if (filter === 'all' || card.getAttribute('data-category') === filter) {
             card.style.display = 'block';
@@ -208,10 +256,16 @@
             card.style.display = 'none';
           }
         });
+
+        // Close menu and scroll to gallery
+        closeMenu();
+        setTimeout(() => {
+          gallery.scrollIntoView({ behavior: 'smooth' });
+        }, 300);
       });
     });
 
-    // --- Lightbox ---
+    // ── Lightbox ──
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
     const lightboxThumbs = document.getElementById('lightboxThumbs');
